@@ -1,0 +1,56 @@
+#N canvas 395 178 923 617 12;
+#N canvas 416 280 953 639 asyncgrnenv-main 0;
+#X obj 100 100 cnv 15 150 150 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X obj 169 123 hradio 20 1 0 4 empty empty array 0 -8 0 15 -262144
+-1 -1 0;
+#X obj 108 119 bng 30 250 50 0 empty empty load 0 -7 0 15 -262144 -1
+-1;
+#X obj 102 335 openpanel;
+#X obj 458 86 loadbang;
+#X obj 99 383 pack s f;
+#X msg 99 408 read -resize \$1 \$2-asyncarr;
+#X obj 99 433 soundfiler;
+#X obj 661 172 array define 0-asyncarr;
+#X obj 654 199 array define 1-asyncarr;
+#X obj 654 234 array define 2-asyncarr;
+#X obj 653 258 array define 3-asyncarr;
+#X obj 453 424 catch~ asyncgrnenvL;
+#X obj 185 187 moonlib/mknob 30 100 0.01 1 1 0 \$0-async-vol_s \$0-async-vol_r
+vol -2 -6 0 15 -262144 -1 -1 9900 1;
+#X obj 166 223 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-async-vol_s empty
+0 -8 0 15 -262144 -1 -1 1 256;
+#X obj 691 414 catch~ asyncgrnenvR;
+#X obj 624 352 r \$0-async-vol_s;
+#X obj 458 111 \$0;
+#X msg 441 134 \; \$1-async-vol_r 1;
+#X obj 621 413 line~;
+#X obj 624 377 pack 0 5;
+#X obj 458 490 *~;
+#X obj 687 475 *~;
+#X obj 458 515 dac~ 1 2;
+#X text 107 164 DXK 17;
+#X text 104 184 GPL V3;
+#X text 108 216 ASE;
+#X connect 1 0 5 1;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 4 0 17 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 12 0 21 0;
+#X connect 15 0 22 0;
+#X connect 16 0 20 0;
+#X connect 17 0 18 0;
+#X connect 19 0 21 1;
+#X connect 19 0 22 1;
+#X connect 20 0 19 0;
+#X connect 21 0 23 0;
+#X connect 22 0 23 1;
+#X coords 0 -1 1 1 150 150 2 100 100;
+#X restore 579 18 pd asyncgrnenv-main;
+#X obj 22 19 asyncgrnenv-grainer 0 0-asyncarr;
+#X obj 22 148 asyncgrnenv-grainer 1 1-asyncarr;
+#X obj 22 276 asyncgrnenv-grainer 2 2-asyncarr;
+#X obj 22 401 asyncgrnenv-grainer 3 3-asyncarr;
