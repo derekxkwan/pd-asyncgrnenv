@@ -1,4 +1,4 @@
-#N canvas 395 178 923 617 12;
+#N canvas 607 195 923 617 12;
 #N canvas 416 280 953 639 asyncgrnenv-main 0;
 #X obj 100 100 cnv 15 150 150 empty empty empty 20 12 0 14 -261682
 -66577 0;
@@ -49,8 +49,8 @@ vol -2 -6 0 15 -262144 -1 -1 9900 1;
 #X connect 21 0 23 0;
 #X connect 22 0 23 1;
 #X coords 0 -1 1 1 150 150 2 100 100;
-#X restore 579 18 pd asyncgrnenv-main;
-#X obj 22 19 asyncgrnenv-grainer 0 0-asyncarr;
-#X obj 22 148 asyncgrnenv-grainer 1 1-asyncarr;
-#X obj 22 276 asyncgrnenv-grainer 2 2-asyncarr;
-#X obj 22 401 asyncgrnenv-grainer 3 3-asyncarr;
+#X restore 573 12 pd asyncgrnenv-main;
+#X obj 14 11 asyncgrnenv-grainer 0;
+#X obj 11 140 asyncgrnenv-grainer 1;
+#X obj 12 273 asyncgrnenv-grainer 2;
+#X obj 11 406 asyncgrnenv-grainer 3;
